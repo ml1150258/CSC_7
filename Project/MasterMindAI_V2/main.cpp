@@ -39,8 +39,8 @@ int main(int argc, char** argv) {
     //Check evaluation
     cout<<nGuess<<" "<<code<<" "<<guess<<endl;
     guess=AI(rr,rw);
-    /*cout<<code<<endl;
-    for(int i=0;i<10000;i++){
+    cout<<code<<endl;
+    /*for(int i=0;i<10000;i++){
         guess=AI(0,0);
         eval(code,guess,rr,rw);
         cout<<setw(5)<<code<<setw(5)<<guess
