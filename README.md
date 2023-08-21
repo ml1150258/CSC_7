@@ -1,1 +1,1 @@
-# 2023_Spring_CSC_7
+# CSC_7
