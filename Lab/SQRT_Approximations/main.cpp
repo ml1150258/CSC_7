@@ -2,7 +2,9 @@
  * File:   main.cpp
  * Author: Dr. Mark E. Lehr
  * Created on August 31, 2023, 11:30 AM
- * Purpose:  Approximations to SQRT
+ * Purpose:  Approximations to SQRT with Timing Comparisons
+ * Reference: The American Mathematical Monthly Aug-Sept 2023 Vol 30, No. 7
+ *            Newtons Method without Division
  */
 
 //System Level Libraries
@@ -16,8 +18,8 @@ using namespace std;  //Library Scope
 //Science and Math, Conversions, Higher Dimensions const to follow
 
 //Function Prototypes
-float nwRphDv(float,int);
-float nwRph(float,int);
+float nwRph(float,int);//Newton-Raphson with no Division
+float Babylon(float,int);//Babylonian Method with algebra same as Newton-Raphson
 
 
 //Execution Starts Here
@@ -50,17 +52,19 @@ int main(int argc, char** argv){
     
     //Display the outputs
     cout<<"Power Function < "<<end-beg+1<<" Secs"<<endl;
-    cout<<"      Sqrt(3) = "<<sqrt3<<endl;
+    cout<<"      Sqrt("<<x<<") = "<<sqrt3<<endl;
     
     beg=time(0);
     for(int i=0;i<=nLoops;i++){
-        sqrt3=nwRphDv(x,3);
+        sqrt3=Babylon(x,3);
     }
     end=time(0);
     
     //Display the outputs
-    cout<<"Newton Raphson 1 with Division < "<<end-beg+1<<" Secs"<<endl;
-    cout<<"      Sqrt(3) = "<<sqrt3<<endl;
+    cout<<"Newton Raphson 1 / Babylonian "<<endl
+            <<"with 2-Divisions and 1-Addition < "
+            <<end-beg+1<<" Secs"<<endl;
+    cout<<"      Sqrt("<<x<<") = "<<sqrt3<<endl;
     
     beg=time(0);
     for(int i=0;i<=nLoops;i++){
@@ -69,17 +73,19 @@ int main(int argc, char** argv){
     end=time(0);
     
     //Display the outputs
-    cout<<"Newton Raphson 2 with 2 Sequences no Division< "<<end-beg+1<<" Secs"<<endl;
-    cout<<"      Sqrt(3) = "<<sqrt3<<endl;
+    cout<<"Newton Raphson 2 with 2 Sequences "<<endl
+            <<"no Division 5 Multiplications 3 Subtractions < "
+            <<end-beg+1<<" Secs"<<endl;
+    cout<<"      Sqrt("<<x<<") = "<<sqrt3<<endl;
     
-    //Clean up - File closing, memory deallocation, etc....
+    //Clean up - File closing, memory de-allocation, etc....
 
     //Exit Stage Right!
     return 0;
 }
 
 //Function Implementations
-float nwRphDv(float x,int n){
+float Babylon(float x,int n){
     float xn=x/2;
     for(int i=1;i<=n;i++){
         xn=(xn+x/xn)/2;
@@ -91,7 +97,7 @@ float nwRph(float x,int n){
     float yn=1/x/2;
     float xn=x/2;
     for(int i=1;i<=n;i++){
-        yn=yn*(2-2*xn*yn);
+        yn=2*yn*(1-xn*yn);
         xn=xn-(xn*xn-x)*yn;
     }
     return xn;
