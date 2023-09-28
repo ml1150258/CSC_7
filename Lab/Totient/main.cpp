@@ -54,8 +54,8 @@ void eulrPhi(int rlPrime[],int n){
     if(n<=1)return;
     rlPrime[0]=n;
     int cnt=n-1;     //1 is always included
-    int sqrRel=n/2+1;//Start at 2 but no need to go more than half way
-    for(int i=2;i<=sqrRel;i++){
+    int hlfRel=n/2+1;//Start at 2 but no need to go more than half way
+    for(int i=2;i<=hlfRel;i++){
         if(n%i==0){//Eliminate all multiples
             for(int j=i;j<n;j+=i){
                 if(rlPrime[j]==0)cnt--;//If the first time marked

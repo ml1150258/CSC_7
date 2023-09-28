@@ -9,11 +9,11 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=luhnalgorithm
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/luhnalgorithm
+CND_ARTIFACT_NAME_Debug=luhnalgorithm_creditcardenum
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/luhnalgorithm_creditcardenum
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=luhnalgorithm.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/luhnalgorithm.tar
+CND_PACKAGE_NAME_Debug=luhnalgorithmcreditcardenum.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/luhnalgorithmcreditcardenum.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-MacOSX
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX

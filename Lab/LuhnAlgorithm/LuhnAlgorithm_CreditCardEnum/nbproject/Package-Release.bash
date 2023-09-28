@@ -6,16 +6,16 @@
 
 # Macros
 TOP=`pwd`
-CND_PLATFORM=Cygwin-Windows
+CND_PLATFORM=GNU-MacOSX
 CND_CONF=Release
 CND_DISTDIR=dist
 CND_BUILDDIR=build
-CND_DLIB_EXT=dll
+CND_DLIB_EXT=dylib
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/totient
-OUTPUT_BASENAME=totient
-PACKAGE_TOP_DIR=totient/
+OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/luhnalgorithm
+OUTPUT_BASENAME=luhnalgorithm
+PACKAGE_TOP_DIR=luhnalgorithm/
 
 # Functions
 function checkReturnCode
@@ -60,15 +60,15 @@ mkdir -p ${NBTMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory "${NBTMPDIR}/totient/bin"
-copyFileToTmpDir "${OUTPUT_PATH}.exe" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}.exe" 0755
+makeDirectory "${NBTMPDIR}/luhnalgorithm/bin"
+copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/totient.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/luhnalgorithm.tar
 cd ${NBTMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/totient.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/luhnalgorithm.tar *
 checkReturnCode
 
 # Cleanup
