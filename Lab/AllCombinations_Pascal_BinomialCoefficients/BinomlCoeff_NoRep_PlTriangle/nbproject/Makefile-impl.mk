@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=BinomialCoefficient_CombinationWithoutReplacement_PascalTriangle
+PROJECTNAME=BinomlCoeff_NoRep_PlTriangle
 
 # Active Configuration
 DEFAULTCONF=Debug
